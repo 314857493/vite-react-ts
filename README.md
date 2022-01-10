@@ -6,7 +6,7 @@ yarn
 
 # dev
 ``` bash
-yarn start
+yarn dev
 ```
 
 # build
