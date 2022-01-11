@@ -14,7 +14,7 @@ const index = withRouter((props) => {
   const dispatch = useDispatch();
   const login = () => {
     new Promise((resolve, reject) => {
-      resolve({ code: 1, data: { userNmae: "jxd", userRole: 1, id: 1 } });
+      resolve({ code: 1, data: { userNmae: "jxd", userRole: 0, id: 1 } });
     })
       // _axios
       //   .post("/cms/system/login", {

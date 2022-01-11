@@ -25,7 +25,7 @@ function Header() {
   };
   const getUserInfo = () => {
     new Promise((resolve, reject) => {
-      resolve({ code: 1, data: { userName: "jxd", userRole: 1, id: 1 } });
+      resolve({ code: 1, data: { userName: "jxd", userRole: 0, id: 1 } });
     })
       // _axios.post("/cms/user/login/info")
       .then((res: any) => {
