@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Modal, Button, Form, Input, Radio, Select } from "antd";
+import { Modal, Button, Form, Input, InputNumber, Radio, Select } from "antd";
 import _axios from "../../../utils/axios";
 import { CatSchema } from "./index";
 
@@ -40,7 +40,7 @@ function ModalEdit({ show, handleShow, onSubmit, rowData }: CatsModalProps) {
             <Input></Input>
           </Form.Item>
           <Form.Item label="猫猫年龄" name="age">
-            <Input></Input>
+            <InputNumber controls={false}></InputNumber>
           </Form.Item>
         </Form>
       </Modal>

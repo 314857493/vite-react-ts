@@ -88,7 +88,7 @@ function Cats() {
       : await _axios.post("/cats", cat);
     // const res: any = await _axios.post("/cats", cat);
     if (res.code === 1) {
-      message.success("创建成功");
+      message.success(cat.id ? "更新成功" : "创建成功");
       getList({ ...query });
     }
   };
