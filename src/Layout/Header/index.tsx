@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.less";
-import _axios from "../../utils/axios.js";
-import { goLogin } from "../../utils";
+import _axios from "@/utils/axios";
+import { goLogin } from "@/utils";
 // import { createHashHistory } from "history";
 import { Dropdown, Menu } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { setUserInfo } from "../../store/slice/userSlice";
-import type { RootState } from "../../store";
+import { setUserInfo } from "@/store/slice/userSlice";
+import type { RootState } from "@/store";
 import { useLocation, useHistory } from "react-router-dom";
 
 function Header() {
@@ -25,7 +25,7 @@ function Header() {
   };
   const getUserInfo = () => {
     new Promise((resolve, reject) => {
-      resolve({ code: 1, data: { userName: "jxd", userRole: 0, id: 1 } });
+      resolve({ code: 1, data: { userName: "jxd", userRole: 1, id: 1 } });
     })
       // _axios.post("/cms/user/login/info")
       .then((res: any) => {

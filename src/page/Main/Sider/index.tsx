@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useRouteMatch } from "react-router-dom";
 import styles from "./index.module.less";
 import { Menu } from "antd";
-import routes from "../../../Router/mainRoutes";
+import routes from "@/Router/mainRoutes";
 import { useSelector } from "react-redux";
-import type { route } from "../../../Router";
-import type { RootState } from "../../../store";
+import type { route } from "@/Router";
+import type { RootState } from "@/store";
 
 function index() {
   const auth = useSelector((state: RootState) => state.user.authority);

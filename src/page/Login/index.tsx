@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
 import { createHashHistory } from "history";
-import _axios from "../../utils/axios";
+import _axios from "@/utils/axios";
 import styles from "./index.module.less";
 import { useDispatch } from "react-redux";
-import { setUserInfo } from "../../store/slice/userSlice";
+import { setUserInfo } from "@/store/slice/userSlice";
 import { withRouter } from "react-router";
 
 const index = withRouter((props) => {
@@ -14,7 +14,7 @@ const index = withRouter((props) => {
   const dispatch = useDispatch();
   const login = () => {
     new Promise((resolve, reject) => {
-      resolve({ code: 1, data: { userNmae: "jxd", userRole: 0, id: 1 } });
+      resolve({ code: 1, data: { userNmae: "jxd", userRole: 1, id: 1 } });
     })
       // _axios
       //   .post("/cms/system/login", {

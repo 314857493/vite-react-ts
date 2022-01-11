@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useLocation, useHistory } from "react-router-dom";
-import _axios from "../utils/axios.js";
+import _axios from "@/utils/axios"
 import * as dayjs from "dayjs";
 import { useStore } from "react-redux";
 

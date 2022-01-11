@@ -1,6 +1,6 @@
-import Index from "../page/index";
-import Cats from "../page/Main/Cats";
-import TestPage from "../page/TestPage";
+import Index from "@/page/index";
+import Cats from "@/page/Main/Cats";
+import TestPage from "@/page/TestPage";
 import type { route } from "./index";
 
 const routes: route[] = [

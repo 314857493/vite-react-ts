@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Login from "../page/Login";
-import Home from "../page/Home";
-import NoMatch from "../page/NoMatch";
+import Login from "@/page/Login";
+import Home from "@/page/Home";
+import NoMatch from "@/page/NoMatch";
 import MainRoute from "./MainRoute";
 
 function RouteBox() {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import routes from "./mainRoutes";
-import Layout from "../Layout";
-import Sider from "../page/Main/Sider";
+import Layout from "@/Layout";
+import Sider from "@/page/Main/Sider";
 import type { route } from "./index";
 
 function MainRoute() {

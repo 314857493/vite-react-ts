@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button, Form, Input, InputNumber, Radio, Select } from "antd";
-import _axios from "../../../utils/axios";
+import _axios from "@/utils/axios";
 import { CatSchema } from "./index";
 
 interface CatsModalProps {

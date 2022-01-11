@@ -5,11 +5,11 @@ import {
   decrement,
   increment,
   incrementByAmount,
-} from "../store/slice/counterSlice";
+} from "@/store/slice/counterSlice";
 import { Button, Input } from "antd";
 import { useDebounceFn } from "ahooks";
-import type { RootState } from "../store";
-import _axios from "../utils/axios";
+import type { RootState } from "@/store";
+import _axios from "@/utils/axios";
 
 function TestPage() {
   const history = useHistory();

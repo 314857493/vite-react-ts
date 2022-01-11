@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 // import Sider from "./Sider";
 import Content from "./Content";
-// import RouteBox from "../";
 import styles from "./index.module.less";
 
 interface LayoutProps {
