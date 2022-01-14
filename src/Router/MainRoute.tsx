@@ -5,7 +5,7 @@ import Layout from "@/Layout";
 import Sider from "@/page/Main/Sider";
 import type { route } from "./index";
 
-function MainRoute() {
+const MainRoute = () => {
   const match = useRouteMatch();
   const filteRoute = (route: route) => {
     if (route.children) {
@@ -17,9 +17,9 @@ function MainRoute() {
             exact
             render={(props) => {
               document.title = c_route.title;
-              return <c_route.component {...props}></c_route.component>;
+              return <c_route.component {...props} />;
             }}
-          ></Route>
+          />
         );
       });
     }
@@ -30,14 +30,14 @@ function MainRoute() {
         exact
         render={(props) => {
           document.title = route.title;
-          return <route.component {...props}></route.component>;
+          return <route.component {...props} />;
         }}
-      ></Route>
+      />
     );
   };
   return (
     <Layout>
-      <Sider></Sider>
+      <Sider />
       <div style={{ flex: 1 }}>
         <Switch>{routes.map((item: route): any => filteRoute(item))}</Switch>
       </div>

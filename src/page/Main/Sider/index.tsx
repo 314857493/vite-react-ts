@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import type { route } from "@/Router";
 import type { RootState } from "@/store";
 
-function index() {
+const Index = () => {
   const auth = useSelector((state: RootState) => state.user.authority);
   const location = useLocation();
   const match = useRouteMatch();
@@ -77,4 +77,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

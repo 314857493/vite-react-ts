@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Button } from "antd";
 
 interface SearchProps {
   onSearch: () => void;
@@ -16,13 +16,13 @@ interface SearchItemProps {
   br?: boolean;
 }
 
-function Search({
+const Search = ({
   onSearch,
   onClear,
   children,
   createBtnTitle,
   createBtnFunc,
-}: SearchProps) {
+}: SearchProps) => {
   const [searchForm] = Form.useForm();
   const clear = () => {
     onClear();
@@ -59,13 +59,16 @@ function Search({
   );
 }
 
-Search.Item = function ({ name, label, children, br }: SearchItemProps) {
+Search.Item = ({ name, label, children, br }: SearchItemProps) => {
   return (
-    <div style={{ width: 400, marginRight: 10 }}>
-      <Form.Item label={label} name={name}>
-        {children}
-      </Form.Item>
-    </div>
+    <>
+      {br && <br />}
+      <div style={{ width: 400, marginRight: 10 }}>
+        <Form.Item label={label} name={name}>
+          {children}
+        </Form.Item>
+      </div>
+    </>
   );
 };
 

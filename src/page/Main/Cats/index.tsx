@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import _axios from "@/utils/axios";
 import Search from "@/Components/Search";
-import { Input, Select, Table, Button, message } from "antd";
+import { Input, Table, Button, message } from "antd";
 
 import ModalEdit from "./ModalEdit";
-const { Column, ColumnGroup } = Table;
-const { Option } = Select;
+const { Column } = Table;
 
 interface catQuery {
   catName?: string;
@@ -19,7 +18,7 @@ export interface CatSchema {
   age: string | number;
 }
 
-function Cats() {
+const Cats = () => {
   const [modalShow, setModalShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [catName, setCatName] = useState("");
@@ -93,7 +92,7 @@ function Cats() {
     }
   };
   const deleteItem = async (item: CatSchema) => {
-    const res: any = await _axios.post("/cats/delete");
+    const res: any = await _axios.post("/cats/delete", { id: item.id });
     if (res.code === 1) {
       message.success("删除成功");
       getList({ ...query });
@@ -118,7 +117,7 @@ function Cats() {
             onChange={(e) => {
               setCatName(e.target.value);
             }}
-          ></Input>
+          />
         </Search.Item>
       </Search>
       <Table
@@ -132,8 +131,8 @@ function Cats() {
           onChange: onChangePage,
         }}
       >
-        <Column title="名字" dataIndex="name"></Column>
-        <Column title="年龄" dataIndex="age"></Column>
+        <Column title="名字" dataIndex="name" />
+        <Column title="年龄" dataIndex="age" />
         <Column
           title="操作"
           dataIndex="ctrl"
@@ -157,7 +156,7 @@ function Cats() {
               </Button>
             </>
           )}
-        ></Column>
+        />
       </Table>
       <ModalEdit
         show={modalShow}
