@@ -3,6 +3,7 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import routes from "./mainRoutes";
 import Layout from "@/Layout";
 import Sider from "@/page/Main/Sider";
+import NoMatch from "@/page/NoMatch";
 import type { route } from "./index";
 
 const MainRoute = () => {
@@ -39,7 +40,15 @@ const MainRoute = () => {
     <Layout>
       <Sider />
       <div style={{ flex: 1 }}>
-        <Switch>{routes.map((item: route): any => filteRoute(item))}</Switch>
+        <Switch>
+          {routes.map((item: route): any => filteRoute(item))}
+          <Route
+            path="*"
+            render={(props) => {
+              document.title = "404";
+              return <NoMatch {...props} />;
+            }}
+          /></Switch>
       </div>
     </Layout>
   );
