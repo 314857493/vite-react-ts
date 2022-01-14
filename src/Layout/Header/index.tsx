@@ -53,7 +53,7 @@ const Header = () => {
           history.push("/");
         }}
       >
-        AI管理平台
+        这里是TITLE
       </span>
       <Dropdown overlay={menu}>
         <span className={styles.user}>{userName}</span>

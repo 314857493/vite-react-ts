@@ -9,6 +9,7 @@ export default defineConfig(() => ({
     react(),
     eslintPlugin({
       include: ["./src/**/*.ts", ".src/**/*.tsx"],
+      exclude: ["plugin:react/jsx-runtime"],
     }),
   ],
   server: {
