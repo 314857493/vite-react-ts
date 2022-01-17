@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import _axios from "@/utils/axios";
-import Search from "@/Components/Search";
+import { Search } from "@/Components";
 import { Input, Table, Button, message } from "antd";
 
 import ModalEdit from "./ModalEdit";
