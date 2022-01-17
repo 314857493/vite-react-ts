@@ -22,6 +22,7 @@ interface SearchItemProps {
   label: string;
   children: any;
   br?: boolean;
+  width?: number;
 }
 
 const Search = ({
@@ -73,12 +74,11 @@ const Search = ({
   );
 };
 
-Search.Item = ({ name, label, children, br }: SearchItemProps) => {
+Search.Item = ({ name, label, children, br, width }: SearchItemProps) => {
   return (
     <>
-      {br && <br />}
-      <div style={{ width: 400, marginRight: 10 }}>
-        <Form.Item label={label} name={name}>
+      <div style={{ width: br ? "100%" : width || 400, marginRight: 10 }}>
+        <Form.Item label={label} name={name} style={{ width: width || 400 }}>
           {children}
         </Form.Item>
       </div>

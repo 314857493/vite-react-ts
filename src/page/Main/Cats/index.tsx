@@ -113,6 +113,9 @@ const Cats = () => {
         <Search.Item name="name" label="猫猫">
           <Input placeholder="请输入猫猫名称" />
         </Search.Item>
+        <Search.Item name="name" label="猫猫" br>
+          <Input placeholder="请输入猫猫名称" />
+        </Search.Item>
       </Search>
       <Table
         dataSource={tabledata}
