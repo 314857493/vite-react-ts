@@ -36,7 +36,12 @@ const ModalEdit = ({ show, handleShow, onSubmit, rowData }: CatsModalProps) => {
         onCancel={handleCancel}
         destroyOnClose
       >
-        <Form form={form}>
+        <Form
+          form={form}
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18 }}
+          labelAlign="left"
+        >
           <Form.Item label="猫猫名字" name="name">
             <Input />
           </Form.Item>
@@ -47,6 +52,6 @@ const ModalEdit = ({ show, handleShow, onSubmit, rowData }: CatsModalProps) => {
       </Modal>
     </>
   );
-}
+};
 
 export default ModalEdit;

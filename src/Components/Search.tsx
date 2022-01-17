@@ -9,6 +9,8 @@ interface SearchProps {
   createBtnTitle?: string;
   createBtnFunc?: () => any;
   form: SearchForm;
+  labelSpan?: number;
+  wrapperSpan?: number;
 }
 
 interface SearchForm {
@@ -32,6 +34,8 @@ const Search = ({
   createBtnTitle,
   createBtnFunc,
   form,
+  labelSpan,
+  wrapperSpan,
 }: SearchProps) => {
   const [searchForm] = Form.useForm();
   const clear = () => {
@@ -45,7 +49,13 @@ const Search = ({
   };
   return (
     <div style={{ padding: 12, clear: "both" }}>
-      <Form form={searchForm} name="searchForm" labelAlign="left">
+      <Form
+        form={searchForm}
+        name="searchForm"
+        labelAlign="right"
+        labelCol={{ span: labelSpan || 5 }}
+        wrapperCol={{ span: wrapperSpan || 19 }}
+      >
         <div
           style={{
             display: "flex",
@@ -55,8 +65,6 @@ const Search = ({
           }}
         >
           {children}
-        </div>
-        <div style={{ float: "left" }}>
           <Button type="primary" onClick={submit}>
             查询
           </Button>
@@ -77,8 +85,13 @@ const Search = ({
 Search.Item = ({ name, label, children, br, width }: SearchItemProps) => {
   return (
     <>
-      <div style={{ width: br ? "100%" : width || 400, marginRight: 10 }}>
-        <Form.Item label={label} name={name} style={{ width: width || 400 }}>
+      <div style={{ width: br ? "80%" : width || 400, marginRight: 10 }}>
+        <Form.Item
+          label={label}
+          name={name}
+          style={{ width: width || 400 }}
+          labelAlign="right"
+        >
           {children}
         </Form.Item>
       </div>
