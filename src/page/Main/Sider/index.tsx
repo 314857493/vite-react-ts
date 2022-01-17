@@ -75,6 +75,6 @@ const Index = () => {
       </Menu>
     </div>
   );
-}
+};
 
 export default Index;
