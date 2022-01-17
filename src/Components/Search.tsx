@@ -1,4 +1,5 @@
-import React from "react";
+import type { MutableRefObject } from "react";
+import React, { useRef } from "react";
 import { Form, Button } from "antd";
 
 interface SearchProps {
@@ -7,6 +8,13 @@ interface SearchProps {
   children: any;
   createBtnTitle?: string;
   createBtnFunc?: () => any;
+  form: SearchForm;
+}
+
+interface SearchForm {
+  getValue: () => MutableRefObject<any>;
+  setForm: (value: any) => any;
+  clearForm: () => any;
 }
 
 interface SearchItemProps {
@@ -22,11 +30,17 @@ const Search = ({
   children,
   createBtnTitle,
   createBtnFunc,
+  form,
 }: SearchProps) => {
   const [searchForm] = Form.useForm();
   const clear = () => {
-    onClear();
     searchForm.resetFields();
+    form.clearForm();
+    onClear();
+  };
+  const submit = () => {
+    form.setForm(searchForm.getFieldsValue());
+    onSearch();
   };
   return (
     <div style={{ padding: 12, clear: "both" }}>
@@ -42,7 +56,7 @@ const Search = ({
           {children}
         </div>
         <div style={{ float: "left" }}>
-          <Button type="primary" onClick={onSearch}>
+          <Button type="primary" onClick={submit}>
             查询
           </Button>
           <Button style={{ marginLeft: 10 }} onClick={clear}>
@@ -57,7 +71,7 @@ const Search = ({
       </Form>
     </div>
   );
-}
+};
 
 Search.Item = ({ name, label, children, br }: SearchItemProps) => {
   return (
@@ -70,6 +84,19 @@ Search.Item = ({ name, label, children, br }: SearchItemProps) => {
       </div>
     </>
   );
+};
+
+Search.useSearchForm = (): SearchForm => {
+  const formValue: MutableRefObject<any> = useRef({});
+  const getValue = () => formValue.current;
+  const setForm = (value: any) => (formValue.current = value);
+  const clearForm = () => (formValue.current = {});
+  const searchForm = {
+    getValue,
+    setForm,
+    clearForm,
+  };
+  return searchForm;
 };
 
 export default Search;
