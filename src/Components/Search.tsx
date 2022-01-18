@@ -25,6 +25,8 @@ interface SearchItemProps {
   children: any;
   br?: boolean;
   width?: number;
+  labelSpan?: number;
+  wrapperSpan?: number;
 }
 
 const Search = ({
@@ -47,14 +49,19 @@ const Search = ({
     form.setForm(searchForm.getFieldsValue());
     onSearch();
   };
+  const formLayout = {
+    labelCol: labelSpan ? { span: labelSpan } : undefined,
+    wrapperCol: wrapperSpan ? { span: wrapperSpan } : undefined,
+  };
   return (
     <div style={{ padding: 12, clear: "both" }}>
       <Form
         form={searchForm}
         name="searchForm"
         labelAlign="right"
-        labelCol={{ span: labelSpan || 5 }}
-        wrapperCol={{ span: wrapperSpan || 19 }}
+        {...formLayout}
+        // labelCol={{ span: labelSpan }}
+        // wrapperCol={{ span: wrapperSpan }}
       >
         <div
           style={{
@@ -82,7 +89,19 @@ const Search = ({
   );
 };
 
-Search.Item = ({ name, label, children, br, width }: SearchItemProps) => {
+Search.Item = ({
+  name,
+  label,
+  children,
+  br,
+  width,
+  labelSpan,
+  wrapperSpan,
+}: SearchItemProps) => {
+  const itemLayout = {
+    labelCol: labelSpan ? { span: labelSpan } : undefined,
+    wrapperCol: wrapperSpan ? { span: wrapperSpan } : undefined,
+  };
   return (
     <>
       <div style={{ width: br ? "80%" : width || 400, marginRight: 10 }}>
@@ -91,6 +110,7 @@ Search.Item = ({ name, label, children, br, width }: SearchItemProps) => {
           name={name}
           style={{ width: width || 400 }}
           labelAlign="right"
+          {...itemLayout}
         >
           {children}
         </Form.Item>

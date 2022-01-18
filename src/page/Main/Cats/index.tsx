@@ -109,8 +109,6 @@ const Cats = () => {
         createBtnTitle="新建猫猫"
         createBtnFunc={openModal}
         form={form}
-        labelSpan={3}
-        wrapperSpan={21}
       >
         <Search.Item name="name" label="猫猫">
           <Input placeholder="请输入猫猫名称" />
