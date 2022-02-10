@@ -1,8 +1,13 @@
-export interface route {
+import type React from "react";
+import RouteBox from "./RouteBox";
+
+export interface MyRoute {
   path: string;
-  component?: JSX.Element | any;
+  Component?: JSX.Element | React.ReactNode | React.FC;
   title: string;
   name: string;
   requireAuth?: boolean;
-  children?: route[];
+  children?: MyRoute[];
 }
+
+export { RouteBox };

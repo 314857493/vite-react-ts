@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import axios from "axios";
 import type { AxiosInstance, Axios } from "axios";
 import { createHashHistory } from "history";
 import { message } from "antd";
 
 const history = createHashHistory();
-const axiosConfig = {
+const config = {
   baseURL: "/api",
   timeout: 50 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };
-const _axios = axios.create(axiosConfig) as AxiosInstance & {
+const _axios = axios.create(config) as AxiosInstance & {
   upload: Axios["post"];
 };
 // Add a response interceptor

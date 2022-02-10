@@ -60,6 +60,6 @@ const Header = () => {
       </Dropdown>
     </div>
   );
-}
+};
 
 export default Header;
