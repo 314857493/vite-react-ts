@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router } from "react-router-dom";
 import styles from "./App.module.less";
-import RouteBox from "./Router/RouteBox";
+import { RouteBox } from "./Router";
 
 const App = () => {
   return (
