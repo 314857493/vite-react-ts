@@ -6,9 +6,8 @@ import _axios from "@/utils/axios";
 import styles from "./index.module.less";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "@/store/slice/userSlice";
-import { withRouter } from "react-router";
 
-const Index = withRouter(() => {
+const Index = () => {
   const [userNmae, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const history = createHashHistory();
@@ -64,6 +63,6 @@ const Index = withRouter(() => {
       </div>
     </div>
   );
-});
+};
 
 export default Index;
