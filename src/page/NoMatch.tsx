@@ -1,6 +1,6 @@
 import React from "react";
 
-const NoMatch = () => {
+const NoMatch: React.FunctionComponent = () => {
   return (
     <div
       style={{

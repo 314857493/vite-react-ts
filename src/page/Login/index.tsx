@@ -7,7 +7,7 @@ import styles from "./index.module.less";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "@/store/slice/userSlice";
 
-const Index = () => {
+const Index: React.FunctionComponent = () => {
   const [userNmae, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
